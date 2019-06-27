@@ -20,6 +20,10 @@ protected:
 
     void copyFrom(T const *A, Rank lo, Rank hi);
 
+    void expand(); //空间不足时扩容
+
+    void shrink();  //装填因子过小时压缩
+
 public:
     // 构造函数
     Vector(int c = DEAFULT_CAPACITY, int s = 0, T v = 0) {  //容量为c、规模为s、所有元素初始为v
@@ -62,6 +66,10 @@ public:
     Rank insert(Rank r, T const &e);
 
     Rank insert(T const &e) { return insert(_size, e); }
+
+    T remove(Rank r);
+
+    int remove(Rank lo, Rank hi);
 
 // 遍历
 
