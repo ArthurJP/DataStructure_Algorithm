@@ -9,6 +9,6 @@
 using namespace std;
 
 int main() {
-
+    Vector<int> vector;
     return 1;
 }
